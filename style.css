@@ -21,31 +21,31 @@
     transform: translateX(-50%);
     display: flex;
  }
- .bar {
+ .bar1, .bar2, .bar3, .bar4 {
     cursor: pointer;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin: 25px 12px 0 16px;
+    position: relative;
+    border: 2px solid black;
+    border-radius: 50%;
+    vertical-align: text-top;
+    background: #fff;
+ }
+.bar1::before, .bar2::before, .bar3::before, .bar4::before {
+    content: " ";
     display: inline-block;
     width: 8px;
     height: 8px;
-    margin: 25px 12px 0 16px;
-    position: relative;
-    border-radius: 50%;
-    transition: background ease-in-out .5s;
- }
-.bar:after {
-    border: 2px solid black;
-    content: " ";
-    display: block;
-    width: 12px;
-    height: 12px;
+    background: #000;
     position: absolute;
-    left: -4px;
-    top: -4px;
+    left: 50%;
+    top: 50%;
     border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: .2s ease-in;
 }  
- .bar:hover {
-    border: 2px solid yellow;
-    background-color: yellow;
- }
  input[name="r"] {
     position: absolute;
     visibility: hidden;
@@ -87,5 +87,17 @@
  }
  #r4:checked ~ .s1 {
     margin-left: -75%;
+ }
+ #r1:checked ~ .navigation > .bar1::before {
+    transform: translate(-50%, -50%) scale(1);
+ }
+ #r2:checked ~ .navigation > .bar2::before {
+    transform: translate(-50%, -50%) scale(1);
+ }
+ #r3:checked ~ .navigation > .bar3::before {
+    transform: translate(-50%, -50%) scale(1);
+ }
+ #r4:checked ~ .navigation > .bar4::before {
+    transform: translate(-50%, -50%) scale(1);
  }
  
