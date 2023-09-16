@@ -3,10 +3,10 @@
     padding: 0;
 }
 .slider {
-    width: 800px;
-    height: 500px;
+    max-width: 1400px;
+    width: 100%;
+    height: 1000px;
     overflow: hidden;
-    border: 10px solid #000;
 }
 .middle {
     position: absolute;
@@ -16,8 +16,8 @@
  }
  .navigation {
     position: absolute;
-    left: 50%;
-    bottom: 16px;
+    left: 90%;
+    bottom: 55px;
     transform: translateX(-50%);
     display: flex;
  }
@@ -36,8 +36,8 @@
 .bar1::before, .bar2::before, .bar3::before, .bar4::before {
     content: " ";
     display: inline-block;
-    width: 8px;
-    height: 8px;
+    width: 11px;
+    height: 11px;
     background: #000;
     position: absolute;
     left: 50%;
@@ -46,6 +46,9 @@
     transform: translate(-50%, -50%) scale(0);
     transition: .2s ease-in;
 }  
+.bar1:hover, .bar2:hover, .bar3:hover, .bar4:hover {
+    background: yellow;
+}
  input[name="r"] {
     position: absolute;
     visibility: hidden;
@@ -57,24 +60,37 @@
  }
  .slide-container {
     width: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #000;
     transition: all .6s ease;
  }
+ .slide-text {
+    width: 365px;
+    height: 20px;
+    margin-top: 123px;
+    margin-left: -185px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color: #fff;
+ }
  .slide-one, .slide-two, .slide-three, .slide-four {
-    width: 100%;
+    width: 563px;
     height: 80%;
     background-repeat: no-repeat;
  }
  .slide-one {
-    background-image: url(./img/1.jpeg);
+    background-image: url(./img/5.jpg);
  }
  .slide-two {
-    background-image: url(./img/2.jpg);
+    background-image: url(./img/9.jpg);
  }
  .slide-three {
-    background-image: url(./img/3.jpg);
+    background-image: url(./img/7.jpg);
  }
  .slide-four {
-    background-image: url(./img/4.jpg);
+    background-image: url(./img/8.jpg);
  }
  #r1:checked ~ .s1 {
     margin-left: 0;
@@ -100,4 +116,9 @@
  #r4:checked ~ .navigation > .bar4::before {
     transform: translate(-50%, -50%) scale(1);
  }
- 
+ @media screen and (max-width: 1024px) {
+    .navigation {
+        left: 50%;
+        bottom: 220px;
+        
+ }
